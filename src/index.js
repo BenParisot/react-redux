@@ -1,8 +1,4 @@
-//import redux 
-
 import { createStore } from 'redux';
-
-//set state to hold lunch: drink, chips, sandwich
 
 const initialState = {
   drink: null,
@@ -10,22 +6,20 @@ const initialState = {
   sandwich: null
 };
 
-//create a reduce to add/remove  state items
-
 function reducer(state = initialState, action) {
   switch(action.type) {
     case 'ADD_DRINK':
       return { ...state, drink: action.payload };
     case 'REMOVE_DRINK':
-      return { ...state, drink: state.drink };
+      return { ...state, drink: null };
     case 'ADD_CHIPS':
       return { ...state, chips: action.payload };
     case 'REMOVE_CHIPS':
-      return { ...state, chips: state.chips };
-    case 'ADD-SAMMIE':
+      return { ...state, chips: null };
+    case 'ADD_SAMMIE':
       return { ...state, sandwich: action.payload };
     case 'REMOVE_SAMMIE':
-      return { ...state, sandwich: state.sandwich };
+      return { ...state, sandwich: null };
     case 'EMPTY-LUNCHBOX':
       return { state };
     default:
@@ -34,7 +28,6 @@ function reducer(state = initialState, action) {
 }
 
 const store = createStore(reducer);
-//write dispatch actions to add/remove state items
 
 console.log('initial store', store.getState());
 
