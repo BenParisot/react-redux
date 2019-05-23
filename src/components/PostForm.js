@@ -10,23 +10,30 @@ export default class PostForm extends PureComponent {
       body: ''
     }
 
-    handleSubmit
+    handleSubmit = event => {
+      event.preventDefault();
+        
+      const { title, body } = this.state;
+      this.props.onSubmit(title, body);
+      this.setState({ title: '', body: '' });
+    }
 
-    handleChange
+    handleChange = ({ target }) => {
+      this.setState({ [target.name]: target.value });
+    }
 
     render() {
       const { title, body } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
           <label>Enter a title:
-            <input type="text"></input>
+            <input name="title" value={title} onChange={this.handleChange}></input>
           </label>
           <label>Write your post:
-            <input type="text"></input>
+            <textarea name="body" value={body} onChange={this.handleChange}></textarea>
           </label>
-          <button type="submit">Create Your Post!</button>
+          <button>Create Your Post!</button>
         </form>
       );
-    
     }
 }
