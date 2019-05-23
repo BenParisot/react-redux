@@ -6,7 +6,7 @@ export const createComment = (postIndex, comment) => ({
   payload: { postIndex, comment }
 });
 
-export const deleteComment = commentIndex => ({
+export const deleteComment = (postIndex, commentIndex) => ({
   type: DELETE_COMMENT, 
-  payload: commentIndex
+  payload: { postIndex, commentIndex }
 });
