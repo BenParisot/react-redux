@@ -1,0 +1,1 @@
+import React, { PureComponent } from '../components/PostForm'

@@ -2,9 +2,9 @@ import React from 'react';
 import Post from './Post';
 import PropTypes from 'prop-types';
 
-function Posts({ posts }) {
-  const postList = posts.map((post, i) => {
-    return <Post key={i} title={post.title} />;
+function Posts({ posts, deletePost }) {
+  const postList = posts.map((post) => {
+    return <Post key={post.id} deletePost={deletePost} title={post.title} />;
   });
     
   return (
@@ -14,7 +14,11 @@ function Posts({ posts }) {
   );
 }
 Posts.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.arrayOf.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired
+  }),
+  deletePost: PropTypes.func.isRequired
 };
 
 export default Posts;
