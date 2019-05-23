@@ -1,25 +1,8 @@
 import { createStore } from 'redux';
-import { createPost, deletePost, CREATE_POST, DELETE_POST } from './actions/post-actions';
-// the post should have an id and a body, which has a title and a textBody
+import { createPost, deletePost } from './actions/post-actions';
+import reducer from './reducers/post-reducers';
 
-const initialState = [];
-// push to initialstate 
 const store = createStore(reducer);
-
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case CREATE_POST:
-      return [...state, { title: action.payload.title, body: action.payload.title }];
-    case DELETE_POST: 
-      return [
-        ...state.slice(0, action.payload),
-        ...state.slice(action.payload + 1)
-      ];
-    default: 
-      return state;
-
-  }
-}
 
 console.log('initial store', store.getState());
 
