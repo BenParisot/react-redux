@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import { createPost, deletePost } from './src/actions/post-actions';
-import reducer from './src/reducers/post-reducers';
+import { createPost, deletePost } from '../src/actions/post-actions';
+import reducer from '../src/reducers/post-reducers';
 
 describe('blog posts', () => {
   const store = createStore(reducer);
