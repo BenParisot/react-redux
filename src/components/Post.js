@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom';
 function Post({ post, deletePost }) {
   return (
     <Link to={`/posts/${post.id}`}>
-      <li><h3>{post.title}</h3></li>
+      <li>
+        <h3>{post.title}</h3>
+        <p onClick={deletePost.bind(null, post.id)}>Delete this post.</p>
+      </li>
     </Link>
   );
 }
