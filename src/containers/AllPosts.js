@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit(id) {
+  deletePost(id) {
     dispatch(deletePost(id));
   }
 });

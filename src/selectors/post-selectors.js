@@ -1,11 +1,10 @@
 export const getAllPosts = state => {
-  console.log('shoudl be posts state', state);
-  return state.posts.map((post, index) => ({
+  return state.posts.map((post, id) => ({
     ...post,
-    index
+    id
   })); 
 };
 
-export const getPostByIndex = (state, index) => {
-  return getAllPosts(state)[index];
+export const getPostByIndex = (state, id) => {
+  return getAllPosts(state)[id];
 };
