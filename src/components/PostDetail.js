@@ -7,11 +7,10 @@ export default function PostDetail({ post }) {
   const paras = post.body.split('\n').map((p, i) => (
     <p key={i}>{p}</p>
   ));
-  
   return (
     <section>
       <h1>{post.title}</h1>
-      {paras}
+      <p>{paras}</p>
     </section>
   );
 }

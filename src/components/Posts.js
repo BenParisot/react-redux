@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 function Posts({ posts, deletePost }) {
   const postList = posts.map((post) => {
+    console.log(post);
     return <Post key={post.id} deletePost={deletePost} post={post} />;
   });
     

@@ -1,14 +1,21 @@
 import React from 'react';
-import AllPosts from '../containers/AllPosts';
-import CreatePost from '../containers/CreatePost';
-import {   BrowserRouter as Router 
+import Home from './Home';
+import {   
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link 
 } from 'react-router-dom';
+import PostById from '../containers/PostById';
 
 export default function App() {
   return (
     <Router>
-      <AllPosts />
-      <CreatePost />
+      <Link to='/'>Home</Link>
+      <Switch>
+        <Route path="/posts/:id" component={PostById} />
+        <Route path="/" component={Home} />
+      </Switch>
     </Router>
 
   );
