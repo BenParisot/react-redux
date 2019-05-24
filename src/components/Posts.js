@@ -14,11 +14,11 @@ function Posts({ posts, deletePost }) {
   );
 }
 Posts.propTypes = {
-  posts: PropTypes.arrayOf.shape({
+  deletePost: PropTypes.func.isRequired,
+  posts: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired
-  }),
-  deletePost: PropTypes.func.isRequired
+  })).isRequired
 };
 
 export default Posts;
