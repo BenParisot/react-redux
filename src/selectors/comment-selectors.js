@@ -1,3 +1,1 @@
-export const getCommentsByPost = (state, index) => {
-  return state.comments[index] || []; 
-}; 
+export const getCommentsByPost = (state, postIndex) => state.comments[postIndex] || []; 
