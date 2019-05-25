@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createComment } from '../actions/comments-actions';
 import CommentForm from '../components/CommentForm';
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispathToProps = (dispatch, props) => ({
   onSubmit(comment) {
     dispatch(createComment(props.postIndex, comment));
   }
@@ -10,5 +10,5 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 export default connect(
   null,
-  mapDispatchToProps
+  mapDispathToProps
 )(CommentForm);

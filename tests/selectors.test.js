@@ -28,11 +28,12 @@ describe('blog comments', () => {
     expect(getPostByIndex(store.getState(), 2)).toEqual({
       title: 'maybe',
       body: 'this is a post?',
-      index: 2
+      id: 2
     });
   });
 
   it('gets all comments of a specific post', () => {
-    expect(getCommentsByPost(store.getState(), 0)).toHaveLength(2);
+    console.log(store.getState());
+    expect(getCommentsByPost(store.getState(), 1)).toHaveLength(2);
   });
 });

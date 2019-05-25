@@ -1,11 +1,15 @@
 import { CREATE_COMMENT, DELETE_COMMENT } from '../actions/comments-actions';
 
-const initialState = {};
-
-export default function reducer(state = initialState, action) {
+export default function reducer(state = {}, action) {
   switch(action.type) {
     case CREATE_COMMENT:
-      return { ...state, [action.payload.postIndex]: [action.payload.comment] };
+      return {
+        ...state,
+        [action.payload.postIndex]: [
+          ...(state[action.payload.postIndex] || []),
+          action.payload.comment
+        ]
+      };
     case DELETE_COMMENT:
       return {
         ...state,
