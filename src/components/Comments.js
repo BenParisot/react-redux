@@ -6,7 +6,7 @@ function Comments({ comments, deleteComment }) {
   console.log('comments', comments);
   const commentList = comments.map((comment, i) => (
     <li key={i}>
-      <Comment id={i} comment={comment} deleteComment={deleteComment} />
+      <Comment commentIndex={i} comment={comment} deleteComment={deleteComment} />
     </li>
   ));
 

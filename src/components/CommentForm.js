@@ -10,7 +10,7 @@ export default class CommentForm extends PureComponent {
     }
     
     handleSubmit = event => {
-      event.prevenDefault();
+      event.preventDefault();
       const { comment } = this.state;
       this.props.onSubmit(comment);
       this.setState({ comment: '' });

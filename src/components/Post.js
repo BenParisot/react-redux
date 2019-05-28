@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function Post({ post, deletePost }) {
+  console.log('single post page', post);
   return (
     <li>
       <Link to={`/posts/${post.id}`}>
